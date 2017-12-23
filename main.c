@@ -6,7 +6,7 @@
 /*   By: ibondare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 16:55:33 by ibondare          #+#    #+#             */
-/*   Updated: 2017/12/06 16:50:14 by ibondare         ###   ########.fr       */
+/*   Updated: 2017/12/23 18:52:55 by ibondare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	main(int ac, char **av)
 	t_map	*map;
 
 	if (ac != 2)
-		err("usage: ./fillit source_file");
+		return(err("usage: ./fillit source_file"));
 	if ((list = read_tt(open(av[1], O_RDONLY))) == NULL)
-		err("error");
+		return(err("error"));
 	map = solve(list);
 	print_map(map);
 	free_map(map);
